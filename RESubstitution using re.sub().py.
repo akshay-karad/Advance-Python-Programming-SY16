@@ -1,0 +1,9 @@
+import re
+text = 'Call 9876543210 or  9123456780  today'
+# 1. Mask phone numbers
+re.sub(r'\d{10}', 'XXXXXXXXXX', text)
+# 2. Collapse multiple spaces into one
+re.sub(r'\s+', ' ', text)
+# 3. Re-order captured groups (date format swap)
+#re.sub(r'(\d{2})-(\d{2})-(\d{4})', r'\3-\2-\1', '25-08-2026')
+# -> '2026-08-25'
